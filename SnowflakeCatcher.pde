@@ -1,10 +1,10 @@
-float waxAndWane = -0;
+float waxAndWane = 0;
 boolean wanedLeft = true;
 boolean wanedRight = false;
 Snowflake [] guy;
 void setup()
 {
-
+noCursor();
   size(500, 500);
   background(0);
   guy = new Snowflake[200];
@@ -22,36 +22,41 @@ void draw()
   fill(205);
   ellipse(mouseX, mouseY, 200, 200);
   fill(0);
-  ellipse(mouseX+waxAndWane, mouseY, 201, 201);
+  ellipse(mouseX+waxAndWane, mouseY, 205, 205);
   //waxAndWane = mouseX-250;
-  if (waxAndWane <=-200)
+
+  if (waxAndWane <=-210)
   {
     wanedLeft = true;
     wanedRight = false;
   }
   if (wanedLeft == true)
   {
-    if (waxAndWane <200)
+    if (waxAndWane <210)
     {
+      //start
       if (frameCount > 300)
       {
+        //start
         waxAndWane +=0.03;
       }
     }
+    //start
   }
-
-  if (waxAndWane>=200 )
+  //start
+  if (waxAndWane>=210 )
   {
     wanedRight = true;
     wanedLeft = false;
   }
   if (wanedRight==true)
   {
-    if (waxAndWane>-200)
+    if (waxAndWane>-210)
     {
       waxAndWane -=0.03;
     }
   }
+
   for (int g=0; g<guy.length; g++) 
 
   {
@@ -77,19 +82,43 @@ class Snowflake
     myY = (int)(Math.random()*500);
     mySize = 2;
     sparkleX = (int)(Math.random()*5);
-    sparkleY = (int)(Math.random()*5);
+    //    sparkleY = (int)(Math.random()*5);
+    if (sparkleX == 3)
+    {
+      sparkleX = (int)(Math.random()*5);
+    }
+    if (sparkleX == 1)
+    {
+      sparkleY = 5;
+    }
+    else if (sparkleX == 2)
+    {
+      sparkleY = 4;
+    }
+    else if (sparkleX == 4)
+    {
+      sparkleY = 2;
+    }
+    else 
+    {
+      sparkleY = 1;
+    }
   }
-  void mouseDragged()
-  {
-  }
-
   void show()
   {
 
     noStroke();
     int randColor = (int)(Math.random()*155+100);
-    fill(randColor, randColor, randColor);
+    if (get(myX, myY+sparkleY)!=color(205))
+    {
+      fill(randColor, randColor, randColor);
+    }
+    else
+    {
+      fill(0);
+    }
     ellipse(myX, myY, sparkleX, sparkleY);
+    ellipse(myX, myY, sparkleY, sparkleX);
   }
   void lookDown()
   {
