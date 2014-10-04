@@ -1,6 +1,3 @@
-float waxAndWane = 0;
-boolean wanedLeft = true;
-boolean wanedRight = false;
 Snowflake [] guy;
 void setup()
 {
@@ -20,34 +17,9 @@ void draw()
 
  ///////////////////////////
  background(0);
-  fill(205);
+  fill(235);
  ellipse(mouseX, mouseY, 200, 200);
- fill(0);
- ellipse(mouseX+waxAndWane, mouseY, 200, 200);
-waxAndWane = mouseX-250;
-//  if(waxAndWane<200 && wanedRight !=true)
-//  {
-//  wanedLeft = true;
-// }
-// if(wanedLeft == true)
-// {
-// if(waxAndWane >0)
-// {
-//   waxAndWane +=0.1;
-// }
-// }
 
-// if(waxAndWane>0 && wanedLeft !=true)
-// {
-//   wanedRight = true;
-// }
-// if(wanedRight==true)
-// {
-//   if(waxAndWane<200)
-//   {
-//   waxAndWane -=0.1;
-// }
-// }
     //ellipse(250, 250, 500, 500);
    ////////////////////////
    for (int g=0; g<guy.length; g++) 
@@ -72,27 +44,28 @@ class Snowflake
   boolean isMoving = true;
   Snowflake()
   {
-     myX = (int)(Math.random()*500);
-      myY = (int)(Math.random()*500);
+    myX = (int)(Math.random()*350+75);
+    myY = (int)(Math.random()*350+75);
     mySize = 2;
     sparkleX = (int)(Math.random()*5);
     sparkleY = (int)(Math.random()*5);
   }
   void mouseDragged()
   {
+// In mouseDragged() write some code that draws to the screen. When you are happy with your assignment, push your repository to your GitHub account. Submit the url of your working program to the school loop drop box. 
 }
 
 void show()
 {
 
   noStroke();
-  int randColor = (int)(Math.random()*155+100);
+  int randColor = (int)(Math.random()*50+205);
   fill(randColor,randColor,randColor);
    ellipse(myX,myY,sparkleX,sparkleY);
 }
 void lookDown()
 {
-  if (myY > 0 && myY < 500 && get(myX,myY+sparkleY)!=color(205))
+  if (myY > 0 && myY < 500 && get(myX,myY+sparkleY)!=color(235))
   {
     isMoving = false;
   }
