@@ -33,7 +33,7 @@ void draw()
   {
     if (waxAndWane <200)
     {
-      if (frameCount > 300)
+      if (frameCount > 50)
       {
         waxAndWane +=0.03;
       }
