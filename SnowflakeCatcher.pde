@@ -33,10 +33,8 @@ void draw()
   {
     if (waxAndWane <200)
     {
-      if (frameCount > 50)
-      {
-        waxAndWane +=0.03;
-      }
+        waxAndWane +=0.3;
+      
     }
   }
 
@@ -49,7 +47,7 @@ void draw()
   {
     if (waxAndWane>-200)
     {
-      waxAndWane -=0.03;
+      waxAndWane -=0.3;
     }
   }
   for (int g=0; g<guy.length; g++) 
