@@ -52,7 +52,6 @@ void draw()
       waxAndWane -=0.03;
     }
   }
-  println(waxAndWane);
   for (int g=0; g<guy.length; g++) 
 
   {
