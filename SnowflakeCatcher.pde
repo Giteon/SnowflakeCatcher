@@ -71,7 +71,7 @@ void draw()
 class Snowflake    
 {     
   int myX;
-  float myY;
+  int myY;
   int mySize;
   int sparkleX;
   int sparkleY;
@@ -175,7 +175,7 @@ class Snowflake
   {
     if (isMoving)
     {
-      myY +=1.5;
+      myY +=1;
     }
     // void move() which checks if the snow flake isMoving. If it is, increase y by one
   }
