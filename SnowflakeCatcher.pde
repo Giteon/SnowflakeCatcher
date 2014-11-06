@@ -38,7 +38,7 @@ void draw()
       if (frameCount > 200)
      {
         //start
-        waxAndWane +=0.04;
+        waxAndWane +=0.033;
      }
     }
     //start
@@ -53,7 +53,7 @@ void draw()
   {
     if (waxAndWane>-210)
     {
-      waxAndWane -=0.04;
+      waxAndWane -=0.033;
     }
   }
 
