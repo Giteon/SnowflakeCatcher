@@ -38,7 +38,7 @@ void draw()
       if (frameCount > 200)
      {
         //start
-        waxAndWane +=0.03;
+        waxAndWane +=0.04;
      }
     }
     //start
@@ -53,7 +53,7 @@ void draw()
   {
     if (waxAndWane>-210)
     {
-      waxAndWane -=0.03;
+      waxAndWane -=0.04;
     }
   }
 
@@ -71,7 +71,7 @@ void draw()
 class Snowflake    
 {     
   int myX;
-  int myY;
+  float myY;
   int mySize;
   int sparkleX;
   int sparkleY;
@@ -175,7 +175,7 @@ class Snowflake
   {
     if (isMoving)
     {
-      myY +=2;
+      myY +=1.5;
     }
     // void move() which checks if the snow flake isMoving. If it is, increase y by one
   }
