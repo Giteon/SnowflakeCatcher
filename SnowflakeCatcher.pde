@@ -7,7 +7,7 @@ void setup()
 noCursor();
   size(500, 500);
   background(0);
-  guy = new Snowflake[100];
+  guy = new Snowflake[150];
 
   for (int i=0; i<guy.length; i++)
   {
