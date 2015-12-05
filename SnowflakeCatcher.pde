@@ -7,7 +7,7 @@ void setup()
 noCursor();
   size(500, 500);
   background(0);
-  guy = new Snowflake[200];
+  guy = new Snowflake[100];
 
   for (int i=0; i<guy.length; i++)
   {
@@ -35,11 +35,11 @@ void draw()
     if (waxAndWane <210)
     {
       //start
-      if (frameCount > 10)
-     {
+      //if (frameCount > 10)
+    // {
         //start
         waxAndWane +=0.05;
-     }
+    // }
     }
     //start
   }
